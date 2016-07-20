@@ -7,12 +7,23 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a href="@Url.Action("Create", "Lists")">
+        <span class="btn btn-default">Create New List</span>
+    </a>
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.ListTitle)
+            List Title
+        </th>
+        <th>
+            Edit
+        </th>
+        <th>
+            Details
+        </th>
+        <th>
+            Delete
         </th>
         <th></th>
     </tr>
@@ -23,9 +34,13 @@
             @Html.DisplayFor(modelItem => item.ListTitle)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ListID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ListID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ListID })
+            <a href="@Url.Action("Edit", "Lists", new { id=item.ListID })"><span class="glyphicon glyphicon-pencil"></span></a>
+        </td>
+        <td>
+            <a href="@Url.Action("Details", "Lists", new { id=item.ListID })"><span class="glyphicon glyphicon-search"></span></a>
+        </td>
+        <td>
+            <a href="@Url.Action("Delete", "Lists", new { id=item.ListID })"><span class="glyphicon glyphicon-remove"></span></a>
         </td>
     </tr>
 }
