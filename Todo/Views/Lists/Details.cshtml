@@ -42,7 +42,7 @@
     {
         <tr>
             <td>
-                <a href="@Url.Action("ToggleDone", new { id=item.ItemID })">
+                <a href="@Url.Action("ToggleDone", "Items", new { id=item.ItemID })">
                     @if (item.IsDone)
                 {
                         <span class="glyphicon glyphicon-check"></span>

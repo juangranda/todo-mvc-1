@@ -128,6 +128,19 @@ namespace Todo.Controllers
         }
 
 
+        public ActionResult AllDone()
+        {
+
+            foreach (var i in db.Items)
+            {
+                i.IsDone = true;
+            }
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+
+
         // GET: Items/Delete/5
         public ActionResult Delete(int? id)
         {
