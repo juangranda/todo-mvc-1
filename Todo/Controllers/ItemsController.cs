@@ -123,7 +123,6 @@ namespace Todo.Controllers
             }
 
             db.SaveChanges();
-
             return RedirectToAction("Index");
         }
 

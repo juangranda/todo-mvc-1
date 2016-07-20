@@ -10,10 +10,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Items Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("New Item", "Create")
 </p>
 <p>
     <a href="@Url.Action("AllDone", "Items")">
@@ -24,13 +24,14 @@
 
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.IsDone)
+            Status
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ItemName)
+            Item
         </th>
+
         <th>
-            @Html.DisplayNameFor(model => model.DueDateTime)
+            Due Date/Time
         </th>
         <th>
             Edit        

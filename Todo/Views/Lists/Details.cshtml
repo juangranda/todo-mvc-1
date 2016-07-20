@@ -16,12 +16,20 @@
     <p>
         <a href="@Url.Action("Create", "Items")"><span class="btn btn-default">Add New Item</span></a>
     </p>
+
+    <p>
+        <a href="@Url.Action("AllDone", new { id = Model.ListID })">
+            <span class="btn btn-default">Mark all done</span>
+        </a>
+    </p>
+
+
 </div>
 
 <table class="table">
     <tr>
         <th>
-            
+            Status
         </th>
         <th>
             Name
@@ -45,7 +53,7 @@
     {
         <tr>
             <td>
-                <a href="@Url.Action("ToggleDone", "Items", new { id=item.ItemID })">
+                <a href="@Url.Action("ToggleDone", "Lists", new { id=item.ItemID })">
                     @if (item.IsDone)
                 {
                         <span class="glyphicon glyphicon-check"></span>
