@@ -17,7 +17,7 @@
 </p>
 <p>
     <a href="@Url.Action("AllDone", "Items")">
-        <span class="btn btn-default">all done</span>
+        <span class="btn btn-default">Mark all done</span>
     </a>
 </p>
 <table class="table">
@@ -33,7 +33,13 @@
             @Html.DisplayNameFor(model => model.DueDateTime)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Details)
+            Edit        
+        </th>
+        <th>
+            Details
+        </th>
+        <th>
+            Delete
         </th>
         <th></th>
     </tr>
@@ -61,12 +67,13 @@
             @Html.DisplayFor(modelItem => item.DueDateTime)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Details)
+            <a href="@Url.Action("Edit", "Items", new { id=item.ItemID })"><span class="glyphicon glyphicon-pencil"></span></a>
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ItemID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ItemID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ItemID })
+            <a href="@Url.Action("Details", "Items", new { id=item.ItemID })"><span class="glyphicon glyphicon-search"></span></a>
+        </td>    
+        <td>    
+            <a href="@Url.Action("Details", "Items", new { id=item.ItemID })"><span class="glyphicon glyphicon-remove"></span></a>
         </td>
     </tr>
 }

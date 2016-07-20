@@ -140,7 +140,6 @@ namespace Todo.Controllers
         }
 
 
-
         // GET: Items/Delete/5
         public ActionResult Delete(int? id)
         {
